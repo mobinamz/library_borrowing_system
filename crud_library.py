@@ -126,6 +126,7 @@ def add_borrow(member_id,book_id):
         else:
             print(f"member with id {member_id} exists.")
         cu.execute("select * from books where id=%s",(book_id,))
+        result=cu.fetchone()
         if not result:
             print("book not found.")
             return
